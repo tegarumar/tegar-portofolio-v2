@@ -112,7 +112,7 @@ export const DATA = {
       end: "Present",
     },
     {
-      school: "Vocation High School 13 Bandung",
+      school: "Vocational High School 13 Bandung",
       href: "https://www.instagram.com/smkn13bandung/",
       degree: "Software Engineering",
       logoUrl: "/smkn13.jpeg",
