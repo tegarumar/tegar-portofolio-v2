@@ -227,6 +227,60 @@ export const DATA = {
       video: "",
     },
     {
+      title: "NLP Marque Luxury",
+      href: "",
+      active: true,
+      description:
+        "A website that uses artificial intelligence in the field of NLP (Natural Language Processing) is used to determine the analysis of product texts on the market and compare them to standard items. i'm here as a Frontend Developer.",
+      technologies: [
+        "Vue.js",
+        "Vuex",
+        "Bootstrap",
+      ],
+      links: [],
+      image: "/birutekno-mnlp.png",
+      video: "",
+    },
+    {
+      title: "Ecomsys",
+      href: "",
+      active: true,
+      description:
+        "Web-based Application for use by company employees, and is used to manage any construction project. I'm here as a Fullstack Developer help in developing the course of the project.",
+      technologies: [
+        "Vue.js",
+        "Vuex",
+        "Bootstrap",
+        "Java",
+        "Spring Boot",
+        "MongoDB",
+      ],
+      links: [],
+      image: "/birutekno-ecomsys.png",
+      video: "",
+    },
+    {
+      title: "Al-Qur'an Digital",
+      href: "https://rock-paper-scissors-games-by-tegar.vercel.app/",
+      active: true,
+      description:
+        "Al-Qur'an Digital, a website that displays the Qur'an with a simple and elegant design.",
+      technologies: [
+        "React.js",
+        "Next.js",
+        "TailwindCSS",
+      ],
+      links: [
+        {
+          type: "Website",
+          href: "https://quran-digital-by-tegar.vercel.app/",
+          icon: <Icons.globe className="size-3" />,
+        },
+      ],
+      image: "/tegar-quran.jpeg",
+      video: "",
+    },
+    {
       title: "Tictactoe",
       href: "https://tictactoe-by-tegar.vercel.app/",
       active: true,
@@ -266,59 +320,5 @@ export const DATA = {
       image: "/tegar-rps.jpeg",
       video: "",
     },
-    {
-      title: "Al-Qur'an Digital",
-      href: "https://rock-paper-scissors-games-by-tegar.vercel.app/",
-      active: true,
-      description:
-        "Al-Qur'an Digital, a website that displays the Qur'an with a simple and elegant design.",
-      technologies: [
-        "React.js",
-        "Next.js",
-        "TailwindCSS",
-      ],
-      links: [
-        {
-          type: "Website",
-          href: "https://rock-paper-scissors-games-by-tegar.vercel.app/",
-          icon: <Icons.globe className="size-3" />,
-        },
-      ],
-      image: "/tegar-quran.jpeg",
-      video: "",
-    },
-    {
-      title: "NLP Marque Luxury",
-      href: "",
-      active: true,
-      description:
-        "A website that uses artificial intelligence in the field of NLP (Natural Language Processing) is used to determine the analysis of product texts on the market and compare them to standard items. i'm here as a Frontend Developer.",
-      technologies: [
-        "Vue.js",
-        "Vuex",
-        "Bootstrap",
-      ],
-      links: [],
-      image: "/birutekno-mnlp.png",
-      video: "",
-    },
-    {
-      title: "Ecomsys",
-      href: "",
-      active: true,
-      description:
-        "Web-based Application for use by company employees, and is used to manage any construction project. I'm here as a Fullstack Developer help in developing the course of the project.",
-      technologies: [
-        "Vue.js",
-        "Vuex",
-        "Bootstrap",
-        "Java",
-        "Spring Boot",
-        "MongoDB",
-      ],
-      links: [],
-      image: "/birutekno-ecomsys.png",
-      video: "",
-    }
   ],
 } as const;
