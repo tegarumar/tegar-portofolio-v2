@@ -85,7 +85,7 @@ export const DATA = {
       location: "Bandung, Jawa Barat",
       title: "Website Developer",
       logoUrl: "/soca-ai.jpeg",
-      start: "Aug 2021",
+      start: "Aug 2022",
       end: "Present",
       description:
         "Responsible for overseeing the entire Front End product of Soca AI, catering to nearly 100,000++ users. Proficient in web application development, specializing in Vue JS, React JS, Tailwind CSS and Bootstrap to create responsive and engaging interfaces. Skilled in integrating intuitive features. Collaborated with R&D to implement AI functionalities, enhancing platform capabilities. Experienced in REST API development, utilizing Java Spring Boot, Laravel, Node.js/Express JS, and MongoDB/PostgreSQL. Demonstrated leadership as a mentor in school internship programs, providing guidance and fostering a collaborative learning environment. Expertise in consuming APIs on the frontend, seamlessly integrating dynamic data to enhance user experiences.",
