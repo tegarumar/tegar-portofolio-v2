@@ -261,7 +261,7 @@ export const DATA = {
     },
     {
       title: "Al-Qur'an Digital",
-      href: "https://rock-paper-scissors-games-by-tegar.vercel.app/",
+      href: "https://quran-digital-by-tegar.vercel.app/",
       active: true,
       description:
         "Al-Qur'an Digital, a website that displays the Qur'an with a simple and elegant design.",
