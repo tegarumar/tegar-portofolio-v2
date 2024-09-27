@@ -10,6 +10,7 @@ import { cn } from "@/lib/utils";
 import Image from "next/image";
 import Link from "next/link";
 import Markdown from "react-markdown";
+import { RainbowButton } from "./magicui/rainbow-button";
 
 interface Props {
   title: string;
@@ -99,10 +100,10 @@ export function ProjectCard({
           <div className="flex flex-row flex-wrap items-start gap-1">
             {links?.map((link, idx) => (
               <Link href={link?.href} key={idx} target="_blank">
-                <Badge key={idx} className="flex gap-2 px-2 py-1 text-[10px]">
+                <RainbowButton key={idx}>
                   {link.icon}
                   {link.type}
-                </Badge>
+                </RainbowButton>
               </Link>
             ))}
           </div>

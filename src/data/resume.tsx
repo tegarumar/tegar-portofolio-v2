@@ -1,5 +1,5 @@
 import { Icons } from "@/components/icons";
-import { HomeIcon, Instagram } from "lucide-react";
+import { HomeIcon } from "lucide-react";
 
 export const DATA = {
   name: "Tegar Umar Abdillah",
@@ -13,11 +13,12 @@ export const DATA = {
     "I work as a website developer at [Soca AI](https://soca.ai/). I am currently pursuing a degree in Computer Science at [Widyatama University](https://www.widyatama.ac.id/). I strongly believe that artificial intelligence will bring significant advancements to the world of technology in the future.",
   avatarUrl: "/me.jpeg",
   skills: [
-    "React",
-    "Next.js",
     "Vue",
     "Nuxt.js",
-    "Typescript",
+    "React",
+    "Next.js",
+    "JavaScript",
+    "TypeScript",
     "Node.js",
     "Python",
     "Flask",
@@ -87,7 +88,7 @@ export const DATA = {
       start: "Aug 2021",
       end: "Present",
       description:
-        "Proficient in web application development, specializing in Vue JS, Bootstrap, and Tailwind CSS to create responsive and engaging interfaces. Skilled in integrating intuitive features such as the Timeline Editor for video content management. Collaborated with R&D to implement AI functionalities, enhancing platform capabilities. Experienced in REST API development, utilizing Java Spring Boot, Laravel, Node.js/Express JS, and MongoDB/PostgreSQL. Demonstrated leadership as a mentor in school internship programs, providing guidance and fostering a collaborative learning environment. Expertise in consuming APIs on the frontend, seamlessly integrating dynamic data to enhance user experiences.",
+        "Responsible for overseeing the entire Front End product of Soca AI, catering to nearly 100,000++ users. Proficient in web application development, specializing in Vue JS, React JS, Tailwind CSS and Bootstrap to create responsive and engaging interfaces. Skilled in integrating intuitive features. Collaborated with R&D to implement AI functionalities, enhancing platform capabilities. Experienced in REST API development, utilizing Java Spring Boot, Laravel, Node.js/Express JS, and MongoDB/PostgreSQL. Demonstrated leadership as a mentor in school internship programs, providing guidance and fostering a collaborative learning environment. Expertise in consuming APIs on the frontend, seamlessly integrating dynamic data to enhance user experiences.",
     },
     {
       company: "Birutekno Inc.",
@@ -99,7 +100,7 @@ export const DATA = {
       start: "Nov 2021",
       end: "Jul 2022",
       description:
-        "Skilled in developing dynamic and responsive website applications using Vue JS, Bootstrap, and Tailwind CSS, ensuring seamless and user-friendly interfaces. Proficient in integrating APIs to enhance functionality and features, optimizing system performance by working with external services and data sources. Actively learning React Native to stay current with industry trends in mobile application development. Contributed significantly to multiple projects, showcasing hands-on development and problem-solving abilities. Experienced in REST API development with Java Spring Boot and MongoDB, ensuring robust communication between frontend and backend components. Demonstrated expertise in consuming APIs on the frontend, seamlessly integrating dynamic data for enhanced user experiences.",
+        "Contributed to more than five projects as a full-stack developer. I utilized a range of technologies, including Vue.js for front-end development, MongoDB and PostgreSQL for database management, as well as Laravel and Spring Boot Java for back-end development. I was involved in the full development lifecycle, from designing application architecture to deployment. This experience enhanced my skills in building modern web applications and collaborating with cross-functional teams.",
     },
   ],
   education: [

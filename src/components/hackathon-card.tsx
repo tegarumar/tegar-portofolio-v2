@@ -37,10 +37,10 @@ export function HackathonCard({
         )}
         <h2 className="font-semibold leading-none">{title}</h2>
         {location && (
-          <p className="text-sm text-muted-foreground">{location}</p>
+          <p className="text-sm">{location}</p>
         )}
         {description && (
-          <span className="prose dark:prose-invert text-sm text-muted-foreground">
+          <span className="prose dark:prose-invert text-sm">
             {description}
           </span>
         )}
