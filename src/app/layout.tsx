@@ -7,6 +7,7 @@ import type { Metadata } from "next";
 import { Inter as FontSans } from "next/font/google";
 import "./globals.css";
 import Meteors from "@/components/magicui/meteors";
+import { Analytics } from "@vercel/analytics/react"
 
 const fontSans = FontSans({
   subsets: ["latin"],
@@ -67,6 +68,7 @@ export default function RootLayout({
         <div className="flex items-center justify-center absolute top-0 left-0 overflow-hidden h-[500px] w-full z-[-1]">
           <Meteors number={30} />
         </div>
+        <Analytics />
       </body>
     </html>
   );
