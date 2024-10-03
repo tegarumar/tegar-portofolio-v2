@@ -4,7 +4,7 @@ import { HomeIcon, CodeIcon } from "lucide-react";
 export const DATA = {
   name: "Tegar Umar Abdillah",
   initials: "T",
-  url: "https://dillion.io",
+  url: "https://tegar-kingofthejungle.vercel.app/",
   location: "San Francisco, CA",
   locationLink: "https://www.google.com/maps/place/sanfrancisco",
   description:
