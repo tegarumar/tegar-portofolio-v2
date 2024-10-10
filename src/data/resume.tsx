@@ -10,7 +10,7 @@ export const DATA = {
   description:
     "Software Engineer - Frontend Developer - Backend Developer",
   summary:
-    "I work as a website developer at [Soca AI](https://soca.ai/). I am currently pursuing a degree in Computer Science at [Widyatama University](https://www.widyatama.ac.id/). I strongly believe that artificial intelligence will bring significant advancements to the world of technology in the future.",
+    "Hi! My name is [Tegar Umar Abdillah](https://www.instagram.com/tegar.ua/) \n\n I'm a passionate Website Developer currently working at [Soca AI](https://soca.ai/), where I collaborate on innovative web solutions to enhance user experiences. I enjoy leveraging cutting-edge technologies to build efficient, user-friendly web applications. \n\n In addition to my professional role, I'm also an active Computer Science student at [Widyatama University](https://www.widyatama.ac.id/), constantly exploring the latest trends and technologies in the world of programming. My journey in both education and work has given me a unique blend of theoretical knowledge and hands-on experience. \n\nAlways eager to learn and grow, I strive to create impactful digital solutions that make a difference. [Let's connect!](https://www.linkedin.com/in/tegarumarabdillah/)",
   avatarUrl: "/me.jpeg",
   skills: [
     "Vue",
@@ -133,7 +133,6 @@ export const DATA = {
         "Vue.js",
         "Vuex",
         "React.js",
-        "TypeScript",
         "Redux",
         "Vite",
         "Bootstrap",
@@ -158,7 +157,7 @@ export const DATA = {
       href: "https://app.soca.ai/",
       active: true,
       description:
-        "Developed a web creator for Soca AI's. Voice cloning, Video Editing, Auto Dubbing, and more.",
+        "Developed a web creator platform, incorporating cutting-edge features such as voice cloning, video editing, and auto dubbing. This project played a pivotal role in enhancing the accessibility of AI-powered content creation for diverse user needs.",
       technologies: [
         "Vue.js",
         "Vuex",
@@ -183,7 +182,7 @@ export const DATA = {
       href: "https://soca.ai/",
       active: true,
       description:
-        "Developed a landing page for Soca AI's product.",
+        "Developed a dynamic and user-friendly landing page for Soca AI's flagship product, focusing on responsive design, smooth user experience, and optimal performance across various devices.",
       technologies: [
         "Vue.js",
         "Bootstrap",
@@ -206,7 +205,7 @@ export const DATA = {
       href: "https://q-gen.soca.ai/",
       active: true,
       description:
-        "Developed a question generator for Soca AI's. Generate questions from text, Play the quiz, and more.",
+        "Developed a question generator tool, designed to generate questions from input text and offer interactive quiz functionalities. The platform allows users to easily create quizzes, test knowledge, and engage in educational activities.",
       technologies: [
         "Vue.js",
         "Vuex",
@@ -281,11 +280,32 @@ export const DATA = {
       video: "",
     },
     {
+      title: "Morpho Butterfly",
+      href: "https://github.com/tegarumar/morpho-butterfly",
+      active: true,
+      description:
+        "A website describe the Morpho Butterfly, a butterfly that has a beautiful blue color.",
+      technologies: [
+        "JavaScript",
+        "Three.js",
+        "GSAP",
+      ],
+      links: [
+        {
+          type: "GitHub",
+          href: "https://github.com/tegarumar/morpho-butterfly",
+          icon: <Icons.github className="size-3" />,
+        },
+      ],
+      image: "",
+      video: "/butterfly.mp4",
+    },
+    {
       title: "Tictactoe",
       href: "https://tictactoe-by-tegar.vercel.app/",
       active: true,
       description:
-        "Tictactoe game",
+        "Tictactoe is a simple game played on a 3x3 grid. The goal is to be the first player to form a straight line with three of their marks, either horizontally, vertically, or diagonally. In the version I created, the player competes against a bot programmed to make strategic decisions.",
       technologies: [
         "Vue.js",
         "Bootstrap",
@@ -296,6 +316,11 @@ export const DATA = {
           href: "https://tictactoe-by-tegar.vercel.app/",
           icon: <Icons.globe className="size-3" />,
         },
+        {
+          type: "GitHub",
+          href: "https://github.com/tegarumar/tictactoe-games",
+          icon: <Icons.github className="size-3" />,
+        }
       ],
       image: "/tegar-tictactoe.jpeg",
       video: "",
@@ -305,7 +330,7 @@ export const DATA = {
       href: "https://rock-paper-scissors-games-by-tegar.vercel.app/",
       active: true,
       description:
-        "Rock Paper Scissors game",
+        "Rock Paper Scissors is a hand game typically played between two people, where each player simultaneously chooses one of three shapes: rock, paper, or scissors. In my version, the player faces a bot that either picks moves randomly or follows a specific strategy.",
       technologies: [
         "Vue.js",
         "Bootstrap",
@@ -316,9 +341,39 @@ export const DATA = {
           href: "https://rock-paper-scissors-games-by-tegar.vercel.app/",
           icon: <Icons.globe className="size-3" />,
         },
+        {
+          type: "GitHub",
+          href: "https://github.com/tegarumar/rock-paper-scissors",
+          icon: <Icons.github className="size-3" />,
+        }
       ],
       image: "/tegar-rps.jpeg",
       video: "",
+    },
+    {
+      title: "Audio Visualizer",
+      href: "https://tegarumar.github.io/audio-visualizer/",
+      active: true,
+      description:
+        "An interactive audio visualizer built with Three.js, rendering dynamic 3D visuals in real-time based on sound frequencies.",
+      technologies: [
+        "JavaScript",
+        "Three.js",
+      ],
+      links: [
+        {
+          type: "Website",
+          href: "https://tegarumar.github.io/audio-visualizer/",
+          icon: <Icons.globe className="size-3" />,
+        },
+        {
+          type: "GitHub",
+          href: "https://github.com/tegarumar/audio-visualizer",
+          icon: <Icons.github className="size-3" />,
+        },
+      ],
+      image: "",
+      video: "/audio-visualizer.mp4",
     },
   ],
 } as const;
