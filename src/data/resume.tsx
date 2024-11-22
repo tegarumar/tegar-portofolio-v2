@@ -7,8 +7,7 @@ export const DATA = {
   url: "https://tegar-kingofthejungle.vercel.app/",
   location: "San Francisco, CA",
   locationLink: "https://www.google.com/maps/place/sanfrancisco",
-  description:
-    "Software Engineer - Frontend Developer - Backend Developer",
+  description: "Software Engineer - Frontend Developer - Backend Developer",
   summary:
     "Hi! My name is [Tegar Umar Abdillah](https://www.instagram.com/tegar.ua/) \n\n I'm a passionate Website Developer currently working at [Soca AI](https://soca.ai/), where I collaborate on innovative web solutions to enhance user experiences. I enjoy leveraging cutting-edge technologies to build efficient, user-friendly web applications. \n\n In addition to my professional role, I'm also an active Computer Science student at [Widyatama University](https://www.widyatama.ac.id/), constantly exploring the latest trends and technologies in the world of programming. My journey in both education and work has given me a unique blend of theoretical knowledge and hands-on experience. \n\nAlways eager to learn and grow, I strive to create impactful digital solutions that make a difference. [Let's connect!](https://www.linkedin.com/in/tegarumarabdillah/)",
   avatarUrl: "/me.jpeg",
@@ -29,7 +28,7 @@ export const DATA = {
     "Java",
     "Spring Boot",
     "PHP",
-    "Laravel"
+    "Laravel",
   ],
   skillsSlug: [
     "typescript",
@@ -66,7 +65,7 @@ export const DATA = {
         name: "Instagram",
         url: "https://www.instagram.com/tegar.ua/",
         icon: Icons.instagram,
-        navbar: true
+        navbar: true,
       },
       email: {
         name: "Send Email",
@@ -149,8 +148,7 @@ export const DATA = {
         },
       ],
       image: "/soca-genesist.jpeg",
-      video:
-        "",
+      video: "",
     },
     {
       title: "Soca AI - Web Creator",
@@ -183,12 +181,7 @@ export const DATA = {
       active: true,
       description:
         "Developed a dynamic and user-friendly landing page for Soca AI's flagship product, focusing on responsive design, smooth user experience, and optimal performance across various devices.",
-      technologies: [
-        "Vue.js",
-        "Bootstrap",
-        "Tailwind CSS",
-        "WordPress",
-      ],
+      technologies: ["Vue.js", "Bootstrap", "TailwindCSS", "WordPress"],
       links: [
         {
           type: "Website",
@@ -197,8 +190,7 @@ export const DATA = {
         },
       ],
       image: "/soca-lp.jpeg",
-      video:
-        "",
+      video: "",
     },
     {
       title: "Soca AI - Q-GEN",
@@ -231,11 +223,7 @@ export const DATA = {
       active: true,
       description:
         "A website that uses artificial intelligence in the field of NLP (Natural Language Processing) is used to determine the analysis of product texts on the market and compare them to standard items. i'm here as a Frontend Developer.",
-      technologies: [
-        "Vue.js",
-        "Vuex",
-        "Bootstrap",
-      ],
+      technologies: ["Vue.js", "Vuex", "Bootstrap"],
       links: [],
       image: "/birutekno-mnlp.png",
       video: "",
@@ -264,11 +252,7 @@ export const DATA = {
       active: true,
       description:
         "Al-Qur'an Digital, a website that displays the Qur'an with a simple and elegant design.",
-      technologies: [
-        "React.js",
-        "Next.js",
-        "TailwindCSS",
-      ],
+      technologies: ["React.js", "Next.js", "TailwindCSS"],
       links: [
         {
           type: "Website",
@@ -285,11 +269,7 @@ export const DATA = {
       active: true,
       description:
         "A website describe the Morpho Butterfly, a butterfly that has a beautiful blue color.",
-      technologies: [
-        "JavaScript",
-        "Three.js",
-        "GSAP",
-      ],
+      technologies: ["JavaScript", "Three.js", "GSAP"],
       links: [
         {
           type: "GitHub",
@@ -306,10 +286,7 @@ export const DATA = {
       active: true,
       description:
         "Tictactoe is a simple game played on a 3x3 grid. The goal is to be the first player to form a straight line with three of their marks, either horizontally, vertically, or diagonally. In the version I created, the player competes against a bot programmed to make strategic decisions.",
-      technologies: [
-        "Vue.js",
-        "Bootstrap",
-      ],
+      technologies: ["Vue.js", "Bootstrap"],
       links: [
         {
           type: "Website",
@@ -320,7 +297,7 @@ export const DATA = {
           type: "GitHub",
           href: "https://github.com/tegarumar/tictactoe-games",
           icon: <Icons.github className="size-3" />,
-        }
+        },
       ],
       image: "/tegar-tictactoe.jpeg",
       video: "",
@@ -331,10 +308,7 @@ export const DATA = {
       active: true,
       description:
         "Rock Paper Scissors is a hand game typically played between two people, where each player simultaneously chooses one of three shapes: rock, paper, or scissors. In my version, the player faces a bot that either picks moves randomly or follows a specific strategy.",
-      technologies: [
-        "Vue.js",
-        "Bootstrap",
-      ],
+      technologies: ["Vue.js", "Bootstrap"],
       links: [
         {
           type: "Website",
@@ -345,9 +319,31 @@ export const DATA = {
           type: "GitHub",
           href: "https://github.com/tegarumar/rock-paper-scissors",
           icon: <Icons.github className="size-3" />,
-        }
+        },
       ],
       image: "/tegar-rps.jpeg",
+      video: "",
+    },
+    {
+      title: "Public IP Checker",
+      href: "https://public-ip-checker.vercel.app/",
+      active: true,
+      description:
+        "Find your public IP address in seconds with this free, responsive tool. No sign-up required. Just one click, no hassle.",
+      technologies: ["HTML", "JavaScript", "TailwindCSS"],
+      links: [
+        {
+          type: "Website",
+          href: "https://public-ip-checker.vercel.app/",
+          icon: <Icons.globe className="size-3" />,
+        },
+        {
+          type: "GitHub",
+          href: "https://github.com/tegarumar/public-ip-checker",
+          icon: <Icons.github className="size-3" />,
+        },
+      ],
+      image: "/public-ip-checker.png",
       video: "",
     },
     {
@@ -356,10 +352,7 @@ export const DATA = {
       active: true,
       description:
         "An interactive audio visualizer built with Three.js, rendering dynamic 3D visuals in real-time based on sound frequencies.",
-      technologies: [
-        "JavaScript",
-        "Three.js",
-      ],
+      technologies: ["JavaScript", "Three.js"],
       links: [
         {
           type: "Website",
