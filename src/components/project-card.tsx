@@ -1,16 +1,11 @@
 import { Badge } from "@/components/ui/badge";
-import {
-  Card,
-  CardContent,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 import Link from "next/link";
 import Markdown from "react-markdown";
 import { RainbowButton } from "./magicui/rainbow-button";
+
+import { CardBody, CardContainer, CardItem } from "@/components/ui/3d-card";
 
 interface Props {
   title: string;
@@ -40,75 +35,76 @@ export function ProjectCard({
   className,
 }: Props) {
   return (
-    <Card
-      className={
-        "flex flex-col overflow-hidden border hover:shadow-lg transition-all duration-300 ease-out h-full"
-      }
-    >
-      <Link
-        href={href || "#"}
-        className={cn("block cursor-pointer", className)}
-      >
-        {video && (
-          <video
-            src={video}
-            autoPlay
-            loop
-            muted
-            playsInline
-            className="pointer-events-none mx-auto h-40 w-full object-cover object-top" // needed because random black line at bottom of video
-          />
-        )}
-        {image && (
-          <Image
-            src={image}
-            alt={title}
-            width={500}
-            height={300}
-            className="h-40 w-full overflow-hidden object-cover object-top"
-          />
-        )}
-      </Link>
-      <CardHeader className="px-2">
-        <div className="space-y-1">
-          <CardTitle className="mt-1 text-base">{title}</CardTitle>
-          <div className="hidden font-sans text-xs underline print:visible">
-            {link?.replace("https://", "").replace("www.", "").replace("/", "")}
+    <>
+      <CardContainer className="inter-var h-full" containerClassName="h-full">
+        <CardBody className="bg-card relative group/card  dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-auto h-full rounded-xl p-6 border flex flex-col gap-2">
+          <CardItem translateZ="50" className="text-xl font-bold">
+            {title}
+          </CardItem>
+          <CardItem translateZ="60">
+            <Markdown className="prose max-w-full text-pretty font-sans text-xs text-muted-foreground dark:prose-invert ">
+              {description}
+            </Markdown>
+          </CardItem>
+          <CardItem translateZ="100" className="w-full mt-4">
+            <Link
+              href={href || "#"}
+              className={cn("block cursor-pointer", className)}
+            >
+              {video && (
+                <video
+                  src={video}
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  className="pointer-events-none mx-auto h-40 w-full object-cover object-top rounded-xl"
+                />
+              )}
+              {image && (
+                <Image
+                  src={image}
+                  alt={title}
+                  width={500}
+                  height={300}
+                  className="h-40 w-full overflow-hidden object-cover object-top rounded-xl"
+                />
+              )}
+            </Link>
+          </CardItem>
+          <div className="flex flex-col gap-2 mt-auto">
+            <CardItem translateZ={60} className="flex flex-col px-2">
+              {tags && tags.length > 0 && (
+                <div className="mt-2 flex flex-wrap gap-1">
+                  {tags?.map((tag) => (
+                    <Badge
+                      className="px-1 py-0 text-[10px]"
+                      variant="secondary"
+                      key={tag}
+                    >
+                      {tag}
+                    </Badge>
+                  ))}
+                </div>
+              )}
+            </CardItem>
+            <CardItem translateZ={60} className="flex items-center">
+              {links && links.length > 0 && (
+                <div className="flex flex-row flex-wrap items-start gap-1">
+                  {links?.map((link, idx) => (
+                    <Link href={link?.href} key={idx} target="_blank">
+                      <RainbowButton key={idx}>
+                        {link.icon}
+                        {link.type}
+                      </RainbowButton>
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </CardItem>
           </div>
-          <Markdown className="prose max-w-full text-pretty font-sans text-xs text-muted-foreground dark:prose-invert">
-            {description}
-          </Markdown>
-        </div>
-      </CardHeader>
-      <CardContent className="mt-auto flex flex-col px-2">
-        {tags && tags.length > 0 && (
-          <div className="mt-2 flex flex-wrap gap-1">
-            {tags?.map((tag) => (
-              <Badge
-                className="px-1 py-0 text-[10px]"
-                variant="secondary"
-                key={tag}
-              >
-                {tag}
-              </Badge>
-            ))}
-          </div>
-        )}
-      </CardContent>
-      <CardFooter className="px-2 pb-2">
-        {links && links.length > 0 && (
-          <div className="flex flex-row flex-wrap items-start gap-1">
-            {links?.map((link, idx) => (
-              <Link href={link?.href} key={idx} target="_blank">
-                <RainbowButton key={idx}>
-                  {link.icon}
-                  {link.type}
-                </RainbowButton>
-              </Link>
-            ))}
-          </div>
-        )}
-      </CardFooter>
-    </Card>
+        </CardBody>
+      </CardContainer>
+    </>
   );
 }

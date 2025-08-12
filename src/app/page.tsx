@@ -2,7 +2,6 @@ import BlurFade from "@/components/magicui/blur-fade";
 import BlurFadeText from "@/components/magicui/blur-fade-text";
 import { ProjectCard } from "@/components/project-card";
 import { ResumeCard } from "@/components/resume-card";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
 import { DATA } from "@/data/resume";
 import Link from "next/link";
@@ -108,7 +107,11 @@ export default function Page() {
           <div className="flex flex-wrap gap-1">
             {DATA.skills.map((skill, id) => (
               <BlurFade key={skill} delay={BLUR_FADE_DELAY * 10 + id * 0.05}>
-                <ShineBorder className="h-fit w-fit rounded-md" borderWidth={1.5} color={["#A07CFE", "#FE8FB5", "#FFBE7B"]}>
+                <ShineBorder
+                  className="h-fit w-fit rounded-md"
+                  borderWidth={1.5}
+                  color={["#A07CFE", "#FE8FB5", "#FFBE7B"]}
+                >
                   <Badge key={skill}>{skill}</Badge>
                 </ShineBorder>
               </BlurFade>
@@ -152,9 +155,16 @@ export default function Page() {
             ))}
             <BlurFade
               className="flex items-center justify-center md:col-span-2 mt-2"
-              delay={BLUR_FADE_DELAY * 11 + DATA.projects.slice(0, 4).length * 0.05}
+              delay={
+                BLUR_FADE_DELAY * 11 + DATA.projects.slice(0, 4).length * 0.05
+              }
             >
-              <Link className="prose dark:prose-invert text-sm underline" href="/projects">View more</Link>
+              <Link
+                className="prose dark:prose-invert text-sm underline"
+                href="/projects"
+              >
+                View more
+              </Link>
             </BlurFade>
           </div>
         </div>
@@ -167,12 +177,14 @@ export default function Page() {
                 Get in Touch
               </h2>
               <p className="mx-auto max-w-[600px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                Got a question? Feel free to drop me a message on{" "}<Link
+                Got a question? Feel free to drop me a message on{" "}
+                <Link
                   href={DATA.contact.social.LinkedIn.url}
                   className="text-blue-500 hover:underline"
                 >
                   LinkedIn
-                </Link>{" "}and I&apos;ll get back to you as soon as I can.
+                </Link>{" "}
+                and I&apos;ll get back to you as soon as I can.
               </p>
             </div>
           </BlurFade>

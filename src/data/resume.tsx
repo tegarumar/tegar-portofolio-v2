@@ -218,6 +218,50 @@ export const DATA = {
       video: "",
     },
     {
+      title: "TIA",
+      href: "",
+      active: true,
+      description:
+        "Tia is a web based AI assistant designed to help users engage in natural, interactive conversations. Tia can answer questions, provide suggestions, create content, and assist with a wide range of tasks—from writing and translation to solving technical problems.",
+      technologies: ["Vue.js", "Vuex", "Bootstrap"],
+      links: [],
+      image: "/tia.jpeg",
+      video: "",
+    },
+    {
+      title: "TIA - Back office",
+      href: "",
+      active: true,
+      description:
+        "Back office for Tia, a web based AI assistant designed to help users engage in natural, interactive conversations. Tia can answer questions, provide suggestions, create content, and assist with a wide range of tasks—from writing and translation to solving technical problems.",
+      technologies: ["Vue.js", "Vuex", "Bootstrap"],
+      links: [],
+      image: "/tia-backoffice.jpeg",
+      video: "",
+    },
+    {
+      title: "PLN Icon Plus - AI Avatar",
+      href: "",
+      active: true,
+      description:
+        "An AI Avatar is a digital representation of a person or character that uses artificial intelligence to interact with users. It can be used in various applications, such as customer service, and virtual assistants. I'm here as a Frontend Developer.",
+      technologies: ["Vue.js", "Vuex", "TailwindCSS"],
+      links: [],
+      image: "/pln-avatar.png",
+      video: "",
+    },
+    {
+      title: "Visecoach - AI Avatar",
+      href: "",
+      active: true,
+      description:
+        "An AI Avatar is a digital representation of a person or character that uses artificial intelligence to interact with users. It can be used in various applications, such as customer service, and virtual assistants. I'm here as a Frontend Developer.",
+      technologies: ["Vue.js", "Vuex", "TailwindCSS"],
+      links: [],
+      image: "/visecoach-avatar.png",
+      video: "",
+    },
+    {
       title: "NLP Marque Luxury",
       href: "",
       active: true,
