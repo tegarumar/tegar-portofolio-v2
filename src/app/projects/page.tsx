@@ -1,47 +1,46 @@
-import BlurFade from "@/components/magicui/blur-fade";
-import { ProjectCard } from "@/components/project-card";
 import { DATA } from "@/data/resume";
+import { ProjectCard } from "@/components/project-card";
 
-const BLUR_FADE_DELAY = 0.04;
+export const metadata = { title: "Projects" };
 
-export default function Projects() {
-    return (
-        <main className="flex flex-col min-h-[100dvh] space-y-10">
-            <section id="projects">
-                <div className="space-y-12 w-full">
-                    <BlurFade delay={BLUR_FADE_DELAY * 11}>
-                        <div className="flex flex-col items-center justify-center space-y-4 text-center">
-                            <div className="space-y-2">
-                                <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
-                                    Explore My Latest Creations
-                                </h2>
-                                <p className="text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                                    From sleek, simple websites to intricate, fully-fledged web applications, I&apos;ve poured my passion into every line of code. Check out some of my favorite projects below!
-                                </p>
-                            </div>
-                        </div>
-                    </BlurFade>
-                    <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 max-w-[800px] mx-auto">
-                        {DATA.projects.map((project, id) => (
-                            <BlurFade
-                                key={project.title}
-                                delay={BLUR_FADE_DELAY * 12 + id * 0.05}
-                            >
-                                <ProjectCard
-                                    href={project.href}
-                                    key={project.title}
-                                    title={project.title}
-                                    description={project.description}
-                                    tags={project.technologies}
-                                    image={project.image}
-                                    video={project.video}
-                                    links={project.links}
-                                />
-                            </BlurFade>
-                        ))}
-                    </div>
-                </div>
-            </section>
-        </main>
-    )
+export default function ProjectsPage() {
+  return (
+    <div className="px-6 sm:px-10 md:px-12 py-10 md:py-14">
+      <div className="max-w-4xl mx-auto">
+        {/* Header */}
+        <div
+          className="p-5 sm:p-6 mb-8"
+          style={{
+            border: "2px solid #000",
+            boxShadow: "6px 6px 0 #000",
+            backgroundColor: "#a9d6b7",
+          }}
+        >
+          <h1 className="text-3xl sm:text-4xl font-black uppercase tracking-tight mb-2">
+            My Projects
+          </h1>
+          <p className="font-bold text-sm sm:text-base max-w-xl">
+            From simple websites to complex web applications — here&apos;s what
+            I&apos;ve built.
+          </p>
+        </div>
+
+        {/* Projects grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-5">
+          {DATA.projects.map((project) => (
+            <ProjectCard
+              key={project.title}
+              href={project.href}
+              title={project.title}
+              description={project.description}
+              tags={project.technologies}
+              image={project.image}
+              video={project.video}
+              links={project.links}
+            />
+          ))}
+        </div>
+      </div>
+    </div>
+  );
 }

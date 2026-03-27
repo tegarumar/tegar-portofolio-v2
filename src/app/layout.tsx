@@ -1,4 +1,4 @@
-import Navbar from "@/components/navbar";
+import Sidebar from "@/components/sidebar";
 import { ThemeProvider } from "@/components/theme-provider";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { DATA } from "@/data/resume";
@@ -6,9 +6,8 @@ import { cn } from "@/lib/utils";
 import type { Metadata } from "next";
 import { Inter as FontSans } from "next/font/google";
 import "./globals.css";
-import Meteors from "@/components/magicui/meteors";
-import { Analytics } from "@vercel/analytics/react"
-import { SpeedInsights } from '@vercel/speed-insights/next';
+import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const fontSans = FontSans({
   subsets: ["latin"],
@@ -41,34 +40,31 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
-  verification: {
-    google: "",
-    yandex: "",
-  },
+  verification: { google: "", yandex: "" },
 };
 
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+}: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body
-        className={cn(
-          "min-h-screen bg-background font-sans antialiased max-w-2xl mx-auto py-12 sm:py-24 px-6",
-          fontSans.variable
-        )}
-      >
+      <body className={cn("min-h-screen antialiased", fontSans.variable)}>
         <ThemeProvider attribute="class" defaultTheme="light">
           <TooltipProvider delayDuration={0}>
-            {children}
-            <Navbar />
+            <div className="flex min-h-screen">
+              <Sidebar />
+              {/*
+                Responsive main offset:
+                - mobile: no offset (sidebar is overlay)
+                - md/tablet: 64px (icon sidebar)
+                - lg/desktop: 220px (full sidebar)
+              */}
+              <main className="flex-1 min-h-screen md:ml-16 lg:ml-[220px] pt-14 md:pt-0">
+                {children}
+              </main>
+            </div>
           </TooltipProvider>
         </ThemeProvider>
-        <div className="flex items-center justify-center absolute top-0 left-0 overflow-hidden h-[500px] w-full z-[-1]">
-          <Meteors number={30} />
-        </div>
         <Analytics />
         <SpeedInsights />
       </body>

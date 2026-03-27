@@ -1,5 +1,4 @@
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { Badge } from "@/components/ui/badge";
+import Image from "next/image";
 import Link from "next/link";
 
 interface Props {
@@ -24,39 +23,69 @@ export function HackathonCard({
   links,
 }: Props) {
   return (
-    <li className="relative ml-10 py-4">
-      <div className="absolute -left-16 top-2 flex items-center justify-center bg-white rounded-full">
-        <Avatar className="border size-12 m-auto">
-          <AvatarImage src={image} alt={title} className="object-contain" />
-          <AvatarFallback>{title[0]}</AvatarFallback>
-        </Avatar>
-      </div>
-      <div className="flex flex-1 flex-col justify-start gap-1">
-        {dates && (
-          <time className="text-xs text-muted-foreground">{dates}</time>
-        )}
-        <h2 className="font-semibold leading-none">{title}</h2>
-        {location && (
-          <p className="text-sm">{location}</p>
-        )}
-        {description && (
-          <span className="prose dark:prose-invert text-sm text-muted-foreground">
-            {description}
-          </span>
-        )}
-      </div>
-      {links && links.length > 0 && (
-        <div className="mt-2 flex flex-row flex-wrap items-start gap-2">
-          {links?.map((link, idx) => (
-            <Link href={link.href} key={idx}>
-              <Badge key={idx} title={link.title} className="flex gap-2">
-                {link.icon}
-                {link.title}
-              </Badge>
-            </Link>
-          ))}
+    <li
+      className="flex gap-4 p-4 bg-white list-none"
+      style={{ border: "2px solid #000", marginBottom: "-2px" }}
+    >
+      {image && (
+        <div
+          className="shrink-0 flex items-center justify-center bg-white"
+          style={{
+            border: "2px solid #000",
+            width: 44,
+            height: 44,
+            minWidth: 44,
+          }}
+        >
+          <Image
+            src={image}
+            alt={title}
+            width={36}
+            height={36}
+            className="object-contain"
+          />
         </div>
       )}
+      <div className="flex-1 min-w-0">
+        <div className="flex items-start justify-between gap-2 flex-wrap">
+          <h3 className="font-black text-sm uppercase">{title}</h3>
+          <span
+            className="text-[10px] font-black uppercase px-2 py-0.5 shrink-0"
+            style={{ border: "1.5px solid #000", backgroundColor: "#FFE033" }}
+          >
+            {dates}
+          </span>
+        </div>
+        {location && (
+          <p className="text-xs font-bold text-gray-600 uppercase tracking-wide mt-0.5">
+            {location}
+          </p>
+        )}
+        {description && (
+          <p className="text-xs text-gray-700 leading-relaxed mt-1 line-clamp-2">
+            {description}
+          </p>
+        )}
+        {links && links.length > 0 && (
+          <div className="flex flex-wrap gap-2 mt-2">
+            {links.map((link, idx) => (
+              <Link
+                href={link.href}
+                key={idx}
+                className="flex items-center gap-1 text-xs font-black uppercase px-2 py-0.5"
+                style={{
+                  border: "1.5px solid #000",
+                  backgroundColor: "#5B8DEF",
+                  color: "#fff",
+                }}
+              >
+                {link.icon}
+                {link.title}
+              </Link>
+            ))}
+          </div>
+        )}
+      </div>
     </li>
   );
 }

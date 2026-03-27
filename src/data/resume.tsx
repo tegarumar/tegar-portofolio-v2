@@ -5,7 +5,8 @@ export const DATA = {
   name: "Tegar Umar Abdillah",
   initials: "T",
   url: "https://tegar-kingofthejungle.vercel.app/",
-  location: "San Francisco, CA",
+  location: "Bandung, Jawa Barat",
+  country: "Indonesia",
   locationLink: "https://www.google.com/maps/place/sanfrancisco",
   description: "Software Engineer - Frontend Developer - Backend Developer",
   summary:
@@ -44,7 +45,7 @@ export const DATA = {
     { href: "/projects", icon: CodeIcon, label: "Projects" },
   ],
   contact: {
-    email: "hello@example.com",
+    email: "tegar.umar@gmail.com",
     tel: "+123456789",
     social: {
       GitHub: {

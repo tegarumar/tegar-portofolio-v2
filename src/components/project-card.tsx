@@ -1,11 +1,6 @@
-import { Badge } from "@/components/ui/badge";
-import { cn } from "@/lib/utils";
 import Image from "next/image";
 import Link from "next/link";
 import Markdown from "react-markdown";
-import { RainbowButton } from "./magicui/rainbow-button";
-
-import { CardBody, CardContainer, CardItem } from "@/components/ui/3d-card";
 
 interface Props {
   title: string;
@@ -28,83 +23,93 @@ export function ProjectCard({
   href,
   description,
   tags,
-  link,
   image,
   video,
   links,
-  className,
 }: Props) {
   return (
-    <>
-      <CardContainer className="inter-var h-full" containerClassName="h-full">
-        <CardBody className="bg-card relative group/card  dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-auto h-full rounded-xl p-6 border flex flex-col gap-2">
-          <CardItem translateZ="50" className="text-xl font-bold">
-            {title}
-          </CardItem>
-          <CardItem translateZ="60">
-            <Markdown className="prose max-w-full text-pretty font-sans text-xs text-muted-foreground dark:prose-invert ">
-              {description}
-            </Markdown>
-          </CardItem>
-          <CardItem translateZ="100" className="w-full mt-4">
-            <Link
-              href={href || "#"}
-              className={cn("block cursor-pointer", className)}
-            >
-              {video && (
-                <video
-                  src={video}
-                  autoPlay
-                  loop
-                  muted
-                  playsInline
-                  className="pointer-events-none mx-auto h-40 w-full object-cover object-top rounded-xl"
-                />
-              )}
-              {image && (
-                <Image
-                  src={image}
-                  alt={title}
-                  width={500}
-                  height={300}
-                  className="h-40 w-full overflow-hidden object-cover object-top rounded-xl"
-                />
-              )}
-            </Link>
-          </CardItem>
-          <div className="flex flex-col gap-2 mt-auto">
-            <CardItem translateZ={60} className="flex flex-col px-2">
-              {tags && tags.length > 0 && (
-                <div className="mt-2 flex flex-wrap gap-1">
-                  {tags?.map((tag) => (
-                    <Badge
-                      className="px-1 py-0 text-[10px]"
-                      variant="secondary"
-                      key={tag}
-                    >
-                      {tag}
-                    </Badge>
-                  ))}
-                </div>
-              )}
-            </CardItem>
-            <CardItem translateZ={60} className="flex items-center">
-              {links && links.length > 0 && (
-                <div className="flex flex-row flex-wrap items-start gap-1">
-                  {links?.map((link, idx) => (
-                    <Link href={link?.href} key={idx} target="_blank">
-                      <RainbowButton key={idx}>
-                        {link.icon}
-                        {link.type}
-                      </RainbowButton>
-                    </Link>
-                  ))}
-                </div>
-              )}
-            </CardItem>
+    <div
+      className="flex flex-col bg-white transition-all duration-100 group hover:translate-x-[3px] hover:translate-y-[3px] hover:!shadow-none"
+      style={{
+        border: "2px solid #000",
+        boxShadow: "5px 5px 0px #000",
+      }}
+    >
+      {/* Image / Video */}
+      {(image || video) && (
+        <div style={{ borderBottom: "2px solid #000" }}>
+          {video ? (
+            <video
+              src={video}
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="w-full h-40 object-cover object-top"
+            />
+          ) : image ? (
+            <Image
+              src={image}
+              alt={title}
+              width={500}
+              height={200}
+              className="w-full h-40 object-cover object-top"
+            />
+          ) : null}
+        </div>
+      )}
+
+      {/* Body */}
+      <div className="flex flex-col flex-1 p-4 gap-2">
+        <h3 className="font-black text-sm uppercase tracking-wide">{title}</h3>
+        <Markdown className="text-xs text-gray-700 leading-relaxed line-clamp-3">
+          {description}
+        </Markdown>
+
+        {/* Tags */}
+        {tags && tags.length > 0 && (
+          <div className="flex flex-wrap gap-1 mt-auto pt-2">
+            {tags.map((tag, i) => (
+              <span
+                key={tag}
+                className="text-[10px] font-black uppercase px-2 py-0.5"
+                style={{
+                  border: "1.5px solid #000",
+                  backgroundColor: i % 2 === 0 ? "#fff" : "#FFE033",
+                }}
+              >
+                {tag}
+              </span>
+            ))}
           </div>
-        </CardBody>
-      </CardContainer>
-    </>
+        )}
+
+        {/* Links */}
+        {links && links.length > 0 && (
+          <div
+            className="flex flex-wrap gap-2 pt-2"
+            style={{ borderTop: "1.5px solid #000" }}
+          >
+            {links.map((link, idx) => (
+              <Link
+                href={link.href}
+                key={idx}
+                target="_blank"
+                className="flex items-center gap-1 text-xs font-black uppercase px-3 py-1 transition-all duration-100 hover:translate-x-[2px] hover:translate-y-[2px] hover:!shadow-none"
+                style={{
+                  border: "1.5px solid #000",
+                  boxShadow: "2px 2px 0px #000",
+                  backgroundColor: "#000",
+                  color: "#FFE033",
+                }}
+              >
+                {link.icon}
+                {link.type}
+              </Link>
+            ))}
+          </div>
+        )}
+      </div>
+    </div>
   );
 }

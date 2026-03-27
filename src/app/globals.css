@@ -3,148 +3,170 @@
 @tailwind utilities;
 
 @layer base {
-    :root {
-      --background: 0 0% 100%;
-      --foreground: 210 11.1% 3.53%;
+  :root {
+    --background: 40 30% 96%;
+    --foreground: 0 0% 4%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 4%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 4%;
+    --primary: 0 0% 4%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 50 100% 60%;
+    --secondary-foreground: 0 0% 4%;
+    --muted: 0 0% 92%;
+    --muted-foreground: 0 0% 32%;
+    --accent: 50 100% 60%;
+    --accent-foreground: 0 0% 4%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 0%;
+    --input: 0 0% 89.8%;
+    --ring: 0 0% 3.9%;
+    --radius: 0rem;
 
-      --card: 0 0% 100%;
-      --card-foreground: 210 11.1% 3.53%;
+    /* Neo Brutalism design tokens */
+    --nb-yellow: #FFE033;
+    --nb-mint: #a9d6b7;
+    --nb-lavender: #fec7ff;
+    --nb-blue: #5B8DEF;
+    --nb-black: #000000;
+    --nb-white: #FFFFFF;
+    --nb-bg: #F5F0E8;
+    --nb-sidebar-w: 220px;
+    --nb-sidebar-icon-w: 64px;
+  }
+}
 
-      --popover: 0 0% 100%;
-      --popover-foreground: 210 11.1% 3.53%;
+@layer base {
+  * {
+    border-color: inherit;
+    box-sizing: border-box;
+  }
+  body {
+    background-color: var(--nb-bg);
+    color: var(--nb-black);
+    font-family: var(--font-sans), sans-serif;
+    overflow-x: hidden;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+}
 
-      --primary: 0 0% 9%;
-      --primary-foreground: 0 0% 98%;
+/* ─── Neo Brutalism utilities ──────────────────────────────── */
+@layer utilities {
+  .nb-border       { border: 2px solid #000; }
+  .nb-border-thick { border: 3px solid #000; }
 
-      --secondary: 0 0% 96.1%;
-      --secondary-foreground: 0 0% 9%;
+  .nb-shadow   { box-shadow: 4px 4px 0px #000; }
+  .nb-shadow-lg { box-shadow: 6px 6px 0px #000; }
 
-      --muted: 0 0% 96.1%;
-      --muted-foreground: 0 0% 45.1%;
+  .nb-card {
+    border: 2px solid #000;
+    box-shadow: 4px 4px 0px #000;
+    background-color: #fff;
+  }
+  .nb-card-yellow   { border: 2px solid #000; box-shadow: 4px 4px 0px #000; background-color: #FFE033; }
+  .nb-card-mint     { border: 2px solid #000; box-shadow: 4px 4px 0px #000; background-color: #a9d6b7; }
+  .nb-card-lavender { border: 2px solid #000; box-shadow: 4px 4px 0px #000; background-color: #fec7ff; }
 
-      --accent: 0 0% 96.1%;
-      --accent-foreground: 0 0% 9%;
-
-      --destructive: 0 84.2% 60.2%;
-      --destructive-foreground: 0 0% 98%;
-
-      --border: 0 0% 89.8%;
-      --input: 0 0% 89.8%;
-      --ring: 0 0% 3.9%;
-
-      --radius: 0.5rem;
-
-      --color-1: 0 100% 63%;
-      --color-2: 270 100% 63%;
-      --color-3: 210 100% 63%;
-      --color-4: 195 100% 63%;
-      --color-5: 90 100% 63%;
-    }
-
-    .dark {
-      --background: 210 11.1% 3.53%;
-      --foreground: 0 0% 98%;
-
-      --card: 210 11.1% 3.53%;
-      --card-foreground: 0 0% 98%;
-
-      --popover: 210 11.1% 3.53%;
-      --popover-foreground: 0 0% 98%;
-
-      --primary: 0 0% 98%;
-      --primary-foreground: 0 0% 9%;
-
-      --secondary: 0 0% 14.9%;
-      --secondary-foreground: 0 0% 98%;
-
-      --muted: 0 0% 14.9%;
-      --muted-foreground: 0 0% 63.9%;
-
-      --accent: 0 0% 14.9%;
-      --accent-foreground: 0 0% 98%;
-
-      --destructive: 0 62.8% 30.6%;
-      --destructive-foreground: 0 0% 98%;
-
-      --border: 0 0% 14.9%;
-      --input: 0 0% 14.9%;
-      --ring: 0 0% 83.1%;
-    }
+  .nb-btn {
+    border: 2px solid #000;
+    box-shadow: 3px 3px 0 #000;
+    background-color: #FFE033;
+    font-weight: 700;
+    transition: all 0.1s ease;
+    cursor: pointer;
+  }
+  .nb-btn:hover {
+    box-shadow: 1px 1px 0 #000;
+    transform: translate(2px, 2px);
+  }
+  .nb-btn-dark {
+    border: 2px solid #000;
+    box-shadow: 3px 3px 0 #000;
+    background-color: #000;
+    color: #FFE033;
+    font-weight: 700;
+    transition: all 0.1s ease;
+  }
+  .nb-btn-dark:hover {
+    box-shadow: 1px 1px 0 #000;
+    transform: translate(2px, 2px);
   }
 
-  @layer base {
-    * {
-      @apply border-border;
-    }
-    body {
-      @apply bg-background text-foreground;
-    }
+  .nb-tag         { border: 1.5px solid #000; background-color: #fff;     font-size: 11px; font-weight: 700; padding: 2px 8px; text-transform: uppercase; letter-spacing: 0.04em; }
+  .nb-tag-yellow  { border: 1.5px solid #000; background-color: #FFE033;  font-size: 11px; font-weight: 700; padding: 2px 8px; text-transform: uppercase; letter-spacing: 0.04em; }
+  .nb-tag-mint    { border: 1.5px solid #000; background-color: #a9d6b7;  font-size: 11px; font-weight: 700; padding: 2px 8px; text-transform: uppercase; letter-spacing: 0.04em; }
+  .nb-tag-lavender{ border: 1.5px solid #000; background-color: #fec7ff;  font-size: 11px; font-weight: 700; padding: 2px 8px; text-transform: uppercase; letter-spacing: 0.04em; }
+  .nb-tag-blue    { border: 1.5px solid #000; background-color: #5B8DEF; color:#fff; font-size: 11px; font-weight: 700; padding: 2px 8px; text-transform: uppercase; letter-spacing: 0.04em; }
+
+  .nb-section-title {
+    font-size: 1.5rem;
+    font-weight: 900;
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
+    border-bottom: 3px solid #000;
+    padding-bottom: 8px;
+    margin-bottom: 20px;
   }
 
-  h3 code {
-    @apply !text-lg md:!text-xl;
-  }
-  
-  pre {
-    @apply !px-0 rounded-lg overflow-x-auto py-4
-  }
-   
-  pre [data-line] {
-    @apply px-4
-  }
+  /* Skill tag rotation using the 5 brand colors */
+  .nb-skill-0 { border: 1.5px solid #000; background-color: #FFE033; box-shadow: 2px 2px 0 #000; }
+  .nb-skill-1 { border: 1.5px solid #000; background-color: #fff;     box-shadow: 2px 2px 0 #000; }
+  .nb-skill-2 { border: 1.5px solid #000; background-color: #a9d6b7; box-shadow: 2px 2px 0 #000; }
+  .nb-skill-3 { border: 1.5px solid #000; background-color: #fec7ff; box-shadow: 2px 2px 0 #000; }
+  .nb-skill-4 { border: 1.5px solid #000; background-color: #5B8DEF; color:#fff; box-shadow: 2px 2px 0 #000; }
+}
 
-  code {
-    @apply text-sm md:text-base !leading-loose;
+/* ─── Responsive sidebar offset ───────────────────────────── */
+/* Applied on <main> in layout.tsx via responsive classes */
+
+/* ─── Code block styles ────────────────────────────────────── */
+h3 code { font-size: 1.125rem; }
+@media (min-width: 768px) { h3 code { font-size: 1.25rem; } }
+
+pre {
+  padding: 1rem 0;
+  border-radius: 0.5rem;
+  overflow-x: auto;
+}
+pre [data-line] { padding: 0 1rem; }
+code { font-size: 0.875rem; line-height: 2; }
+@media (min-width: 768px) { code { font-size: 1rem; } }
+
+pre > code { counter-reset: line; }
+
+code[data-theme*=" "], code[data-theme*=" "] span {
+  color: var(--shiki-light);
+  background-color: var(--shiki-light-bg);
+}
+@media (prefers-color-scheme: dark) {
+  code[data-theme*=" "], code[data-theme*=" "] span {
+    color: var(--shiki-dark);
+    background-color: var(--shiki-dark-bg);
   }
-  
-  pre > code {
-    counter-reset: line;
-  }
-  
-  code[data-theme*=" "],
-  code[data-theme*=" "] span {
-    color: var(--shiki-light);
-    background-color: var(--shiki-light-bg);
-  }
-   
-  @media (prefers-color-scheme: dark) {
-    code[data-theme*=" "],
-    code[data-theme*=" "] span {
-      color: var(--shiki-dark);
-      background-color: var(--shiki-dark-bg);
-    }
-  }
-  
-  code[data-line-numbers] {
-    counter-reset: line;
-  }
-  
-  code[data-line-numbers] > [data-line]::before {
-    counter-increment: line;
-    content: counter(line);
-    @apply inline-block w-4 mr-4 text-right text-gray-500;
-  }
- 
-  code {
-    counter-reset: line;
-  }
- 
-  code > [data-line]::before {
+}
+
+code[data-line-numbers] { counter-reset: line; }
+code[data-line-numbers] > [data-line]::before {
   counter-increment: line;
   content: counter(line);
- 
-  /* Other styling */
+  display: inline-block;
+  width: 1rem;
+  margin-right: 1rem;
+  text-align: right;
+  color: gray;
+}
+code > [data-line]::before {
+  counter-increment: line;
+  content: counter(line);
   display: inline-block;
   width: 1rem;
   margin-right: 2rem;
   text-align: right;
   color: gray;
 }
- 
-code[data-line-numbers-max-digits="2"] > [data-line]::before {
-  width: 2rem;
-}
- 
-code[data-line-numbers-max-digits="3"] > [data-line]::before {
-  width: 3rem;
-}
+code[data-line-numbers-max-digits="2"] > [data-line]::before { width: 2rem; }
+code[data-line-numbers-max-digits="3"] > [data-line]::before { width: 3rem; }
