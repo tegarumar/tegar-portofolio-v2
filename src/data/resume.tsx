@@ -1,16 +1,58 @@
-import { Icons } from "@/components/icons";
-import { HomeIcon, CodeIcon } from "lucide-react";
+import Link from "next/link";
+
+export type ProjectLink = {
+  type: "Website" | "GitHub";
+  href: string;
+};
+
+export type Project = {
+  slug: string;
+  title: string;
+  href: string;
+  featured?: boolean;
+  description: string;
+  technologies: readonly string[];
+  links: readonly ProjectLink[];
+  image: string;
+  video: string;
+};
 
 export const DATA = {
   name: "Tegar Umar Abdillah",
   initials: "T",
   url: "https://tegar-kingofthejungle.vercel.app/",
-  location: "San Francisco, CA",
-  locationLink: "https://www.google.com/maps/place/sanfrancisco",
+  location: "Bandung, Indonesia",
+  timeZone: "Asia/Jakarta",
   description: "Software Engineer - Frontend Developer - Backend Developer",
-  summary:
-    "Hi! My name is [Tegar Umar Abdillah](https://www.instagram.com/tegar.ua/) \n\n I'm a passionate Website Developer currently working at [Soca AI](https://soca.ai/), where I collaborate on innovative web solutions to enhance user experiences. I enjoy leveraging cutting-edge technologies to build efficient, user-friendly web applications. \n\n In addition to my professional role, I'm also an active Computer Science student at [Widyatama University](https://www.widyatama.ac.id/), constantly exploring the latest trends and technologies in the world of programming. My journey in both education and work has given me a unique blend of theoretical knowledge and hands-on experience. \n\nAlways eager to learn and grow, I strive to create impactful digital solutions that make a difference. [Let's connect!](https://www.linkedin.com/in/tegarumarabdillah/)",
-  avatarUrl: "/me.jpeg",
+  role: "Software engineer, frontend & backend",
+  summary: (
+    <>
+      <p>
+        I&apos;m a website developer at{" "}
+        <Link className="link" href="https://soca.ai/">
+          Soca AI
+        </Link>
+        , where I look after the frontend of AI products used by nearly
+        100,000 people. I like building web apps that feel quick and simple to
+        use.
+      </p>
+      <p>
+        I&apos;m also studying Informatics at{" "}
+        <Link className="link" href="https://www.widyatama.ac.id/">
+          Widyatama University
+        </Link>
+        , so my days are split between shipping product and learning the
+        theory behind it. Lately I&apos;ve been learning to write, too. You can
+        read along on the{" "}
+        <Link className="link" href="/blog">
+          blog
+        </Link>
+        .
+      </p>
+    </>
+  ),
+  now: ["Building at Soca AI", "Studying at Widyatama"],
+  avatarUrl: "/image.png",
   skills: [
     "Vue",
     "Nuxt.js",
@@ -30,49 +72,25 @@ export const DATA = {
     "PHP",
     "Laravel",
   ],
-  skillsSlug: [
-    "typescript",
-    "java",
-    "react",
-    "express",
-    "postgresql",
-    "mongodb",
-    "vue",
-  ],
   navbar: [
-    { href: "/", icon: HomeIcon, label: "Home" },
-    { href: "/projects", icon: CodeIcon, label: "Projects" },
+    { href: "/", label: "Home" },
+    { href: "/projects", label: "Projects" },
+    { href: "/blog", label: "Blog" },
   ],
   contact: {
-    email: "hello@example.com",
-    tel: "+123456789",
+    email: "",
     social: {
       GitHub: {
         name: "GitHub",
         url: "https://github.com/tegarumar",
-        icon: Icons.github,
-
-        navbar: true,
       },
       LinkedIn: {
         name: "LinkedIn",
         url: "https://www.linkedin.com/in/tegarumarabdillah/",
-        icon: Icons.linkedin,
-
-        navbar: true,
       },
       Instagram: {
         name: "Instagram",
         url: "https://www.instagram.com/tegar.ua/",
-        icon: Icons.instagram,
-        navbar: true,
-      },
-      email: {
-        name: "Send Email",
-        url: "#",
-        icon: Icons.email,
-
-        navbar: false,
       },
     },
   },
@@ -81,7 +99,6 @@ export const DATA = {
     {
       company: "Soca AI",
       href: "https://soca.ai/",
-      badges: [],
       location: "Bandung, Jawa Barat",
       title: "Website Developer",
       logoUrl: "/soca-ai.jpeg",
@@ -93,7 +110,6 @@ export const DATA = {
     {
       company: "Birutekno Inc.",
       href: "https://www.birutekno.com/",
-      badges: [],
       location: "Bandung, Jawa Barat",
       title: "Fullstack Developer",
       logoUrl: "/birutekno.png",
@@ -123,9 +139,10 @@ export const DATA = {
   ],
   projects: [
     {
+      slug: "soca-genesist",
       title: "Soca AI - Genesist",
       href: "https://genesist.soca.ai/",
-      active: true,
+      featured: true,
       description:
         "Genesist is a custom-developed AI solution, designed to enhance productivity and efficiency across various enterprise sectors. Built on a secure, on-premise large language model (LLM) platform, Genesist enables businesses to integrate AI into their operations.",
       technologies: [
@@ -140,20 +157,15 @@ export const DATA = {
         "Express.js",
         "MongoDB",
       ],
-      links: [
-        {
-          type: "Website",
-          href: "https://genesist.soca.ai/",
-          icon: <Icons.globe className="size-3" />,
-        },
-      ],
+      links: [{ type: "Website", href: "https://genesist.soca.ai/" }],
       image: "/soca-genesist.jpeg",
       video: "",
     },
     {
+      slug: "soca-web-creator",
       title: "Soca AI - Web Creator",
       href: "https://app.soca.ai/",
-      active: true,
+      featured: true,
       description:
         "Developed a web creator platform, incorporating cutting-edge features such as voice cloning, video editing, and auto dubbing. This project played a pivotal role in enhancing the accessibility of AI-powered content creation for diverse user needs.",
       technologies: [
@@ -165,37 +177,26 @@ export const DATA = {
         "Express.js",
         "MongoDB",
       ],
-      links: [
-        {
-          type: "Website",
-          href: "https://app.soca.ai/",
-          icon: <Icons.globe className="size-3" />,
-        },
-      ],
+      links: [{ type: "Website", href: "https://app.soca.ai/" }],
       image: "/soca-wc.jpeg",
       video: "",
     },
     {
+      slug: "soca-landing-page",
       title: "Soca AI - Landing Page",
       href: "https://soca.ai/",
-      active: true,
       description:
         "Developed a dynamic and user-friendly landing page for Soca AI's flagship product, focusing on responsive design, smooth user experience, and optimal performance across various devices.",
       technologies: ["Vue.js", "Bootstrap", "TailwindCSS", "WordPress"],
-      links: [
-        {
-          type: "Website",
-          href: "https://soca.ai/",
-          icon: <Icons.globe className="size-3" />,
-        },
-      ],
+      links: [{ type: "Website", href: "https://soca.ai/" }],
       image: "/soca-lp.jpeg",
       video: "",
     },
     {
+      slug: "soca-q-gen",
       title: "Soca AI - Q-GEN",
       href: "https://q-gen.soca.ai/",
-      active: true,
+      featured: true,
       description:
         "Developed a question generator tool, designed to generate questions from input text and offer interactive quiz functionalities. The platform allows users to easily create quizzes, test knowledge, and engage in educational activities.",
       technologies: [
@@ -207,20 +208,14 @@ export const DATA = {
         "Express.js",
         "MongoDB",
       ],
-      links: [
-        {
-          type: "Website",
-          href: "https://q-gen.soca.ai/",
-          icon: <Icons.globe className="size-3" />,
-        },
-      ],
+      links: [{ type: "Website", href: "https://q-gen.soca.ai/" }],
       image: "/soca-qgen.png",
       video: "",
     },
     {
+      slug: "tia",
       title: "TIA",
       href: "",
-      active: true,
       description:
         "Tia is a web based AI assistant designed to help users engage in natural, interactive conversations. Tia can answer questions, provide suggestions, create content, and assist with a wide range of tasks—from writing and translation to solving technical problems.",
       technologies: ["Vue.js", "Vuex", "Bootstrap"],
@@ -229,9 +224,9 @@ export const DATA = {
       video: "",
     },
     {
+      slug: "tia-back-office",
       title: "TIA - Back office",
       href: "",
-      active: true,
       description:
         "Back office for Tia, a web based AI assistant designed to help users engage in natural, interactive conversations. Tia can answer questions, provide suggestions, create content, and assist with a wide range of tasks—from writing and translation to solving technical problems.",
       technologies: ["Vue.js", "Vuex", "Bootstrap"],
@@ -240,9 +235,9 @@ export const DATA = {
       video: "",
     },
     {
+      slug: "pln-ai-avatar",
       title: "PLN Icon Plus - AI Avatar",
       href: "",
-      active: true,
       description:
         "An AI Avatar is a digital representation of a person or character that uses artificial intelligence to interact with users. It can be used in various applications, such as customer service, and virtual assistants. I'm here as a Frontend Developer.",
       technologies: ["Vue.js", "Vuex", "TailwindCSS"],
@@ -251,9 +246,9 @@ export const DATA = {
       video: "",
     },
     {
+      slug: "visecoach-ai-avatar",
       title: "Visecoach - AI Avatar",
       href: "",
-      active: true,
       description:
         "An AI Avatar is a digital representation of a person or character that uses artificial intelligence to interact with users. It can be used in various applications, such as customer service, and virtual assistants. I'm here as a Frontend Developer.",
       technologies: ["Vue.js", "Vuex", "TailwindCSS"],
@@ -262,9 +257,9 @@ export const DATA = {
       video: "",
     },
     {
+      slug: "nlp-marque-luxury",
       title: "NLP Marque Luxury",
       href: "",
-      active: true,
       description:
         "A website that uses artificial intelligence in the field of NLP (Natural Language Processing) is used to determine the analysis of product texts on the market and compare them to standard items. i'm here as a Frontend Developer.",
       technologies: ["Vue.js", "Vuex", "Bootstrap"],
@@ -273,9 +268,9 @@ export const DATA = {
       video: "",
     },
     {
+      slug: "ecomsys",
       title: "Ecomsys",
       href: "",
-      active: true,
       description:
         "Web-based Application for use by company employees, and is used to manage any construction project. I'm here as a Fullstack Developer help in developing the course of the project.",
       technologies: [
@@ -291,65 +286,50 @@ export const DATA = {
       video: "",
     },
     {
+      slug: "quran-digital",
       title: "Al-Qur'an Digital",
       href: "https://quran-digital-by-tegar.vercel.app/",
-      active: true,
+      featured: true,
       description:
         "Al-Qur'an Digital, a website that displays the Qur'an with a simple and elegant design.",
       technologies: ["React.js", "Next.js", "TailwindCSS"],
       links: [
-        {
-          type: "Website",
-          href: "https://quran-digital-by-tegar.vercel.app/",
-          icon: <Icons.globe className="size-3" />,
-        },
+        { type: "Website", href: "https://quran-digital-by-tegar.vercel.app/" },
       ],
       image: "/tegar-quran.jpeg",
       video: "",
     },
     {
+      slug: "morpho-butterfly",
       title: "Morpho Butterfly",
       href: "https://github.com/tegarumar/morpho-butterfly",
-      active: true,
       description:
         "A website describe the Morpho Butterfly, a butterfly that has a beautiful blue color.",
       technologies: ["JavaScript", "Three.js", "GSAP"],
       links: [
-        {
-          type: "GitHub",
-          href: "https://github.com/tegarumar/morpho-butterfly",
-          icon: <Icons.github className="size-3" />,
-        },
+        { type: "GitHub", href: "https://github.com/tegarumar/morpho-butterfly" },
       ],
       image: "",
       video: "/butterfly.mp4",
     },
     {
+      slug: "tictactoe",
       title: "Tictactoe",
       href: "https://tictactoe-by-tegar.vercel.app/",
-      active: true,
       description:
         "Tictactoe is a simple game played on a 3x3 grid. The goal is to be the first player to form a straight line with three of their marks, either horizontally, vertically, or diagonally. In the version I created, the player competes against a bot programmed to make strategic decisions.",
       technologies: ["Vue.js", "Bootstrap"],
       links: [
-        {
-          type: "Website",
-          href: "https://tictactoe-by-tegar.vercel.app/",
-          icon: <Icons.globe className="size-3" />,
-        },
-        {
-          type: "GitHub",
-          href: "https://github.com/tegarumar/tictactoe-games",
-          icon: <Icons.github className="size-3" />,
-        },
+        { type: "Website", href: "https://tictactoe-by-tegar.vercel.app/" },
+        { type: "GitHub", href: "https://github.com/tegarumar/tictactoe-games" },
       ],
       image: "/tegar-tictactoe.jpeg",
       video: "",
     },
     {
+      slug: "rock-paper-scissors",
       title: "Rock Paper Scissors",
       href: "https://rock-paper-scissors-games-by-tegar.vercel.app/",
-      active: true,
       description:
         "Rock Paper Scissors is a hand game typically played between two people, where each player simultaneously chooses one of three shapes: rock, paper, or scissors. In my version, the player faces a bot that either picks moves randomly or follows a specific strategy.",
       technologies: ["Vue.js", "Bootstrap"],
@@ -357,43 +337,37 @@ export const DATA = {
         {
           type: "Website",
           href: "https://rock-paper-scissors-games-by-tegar.vercel.app/",
-          icon: <Icons.globe className="size-3" />,
         },
         {
           type: "GitHub",
           href: "https://github.com/tegarumar/rock-paper-scissors",
-          icon: <Icons.github className="size-3" />,
         },
       ],
       image: "/tegar-rps.jpeg",
       video: "",
     },
     {
+      slug: "public-ip-checker",
       title: "Public IP Checker",
       href: "https://public-ip-checker.vercel.app/",
-      active: true,
       description:
         "Find your public IP address in seconds with this free, responsive tool. No sign-up required. Just one click, no hassle.",
       technologies: ["HTML", "JavaScript", "TailwindCSS"],
       links: [
-        {
-          type: "Website",
-          href: "https://public-ip-checker.vercel.app/",
-          icon: <Icons.globe className="size-3" />,
-        },
+        { type: "Website", href: "https://public-ip-checker.vercel.app/" },
         {
           type: "GitHub",
           href: "https://github.com/tegarumar/public-ip-checker",
-          icon: <Icons.github className="size-3" />,
         },
       ],
       image: "/public-ip-checker.png",
       video: "",
     },
     {
+      slug: "audio-visualizer",
       title: "Audio Visualizer",
       href: "https://tegarumar.github.io/audio-visualizer/",
-      active: true,
+      featured: true,
       description:
         "An interactive audio visualizer built with Three.js, rendering dynamic 3D visuals in real-time based on sound frequencies.",
       technologies: ["JavaScript", "Three.js"],
@@ -401,16 +375,18 @@ export const DATA = {
         {
           type: "Website",
           href: "https://tegarumar.github.io/audio-visualizer/",
-          icon: <Icons.globe className="size-3" />,
         },
         {
           type: "GitHub",
           href: "https://github.com/tegarumar/audio-visualizer",
-          icon: <Icons.github className="size-3" />,
         },
       ],
       image: "",
       video: "/audio-visualizer.mp4",
     },
-  ],
+  ] satisfies Project[],
 } as const;
+
+export function getProject(slug: string): Project | undefined {
+  return DATA.projects.find((project) => project.slug === slug);
+}
